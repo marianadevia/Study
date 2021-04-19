@@ -13,22 +13,15 @@ class HomePage extends StatelessWidget {
   }
       
   Widget _lista() {
-
     return FutureBuilder(
       future: menuProvider.cargarData(),
       // opcional initialData: [],
       builder:(context, AsyncSnapshot<List<dynamic>> snapshot){
-      
-        print(snapshot.data);
         return ListView(
-      children: _listaItems(snapshot.data),
-    );
+          children: _listaItems(snapshot.data),
+        );
       } ,
     );
-
-    //print(menuProvider.opciones);
-    
-   /* return */
   }
 
   List<Widget> _listaItems(List<dynamic> data) {
